@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    axios.get( 'http://localhost:8080/reactwp/wp-json/wp/v2/posts' )
+    axios.get( 'http://localhost:8080/reactwp/wp-json/wp/v2/posts?_embed' )
       .then ( response => {
         this.setState( {
           posts: response.data
@@ -26,7 +26,6 @@ class App extends Component {
   }
 
   render() {
-    console.log( this.state );
     const listOfPost = this.state.posts.map( ( post, key ) => {
       return <PostsList key={ key } post={ post } />
              
