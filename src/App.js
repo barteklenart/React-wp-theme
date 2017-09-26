@@ -1,42 +1,24 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
 //componets
-import PostsList from './components/PostsList';
+import Layout from './layouts/Layout';
+import Home from './pages/Home';
+import Posts from './layouts/Posts';
 
 class App extends Component {
-
-  constructor(){
-    super();
-    this.state = {
-      posts: []
-    }
-  }
-
-  componentDidMount(){
-    axios.get( 'http://localhost:8080/reactwp/wp-json/wp/v2/posts?_embed' )
-      .then ( response => {
-        this.setState( {
-          posts: response.data
-        } )
-      } )
-      .catch( error => {
-        console.log( error );
-      } )
-  }
-
   render() {
-    const listOfPost = this.state.posts.map( ( post, key ) => {
-      return <PostsList key={ key } post={ post } />
-             
-    } );
-
     return (
-      <div className="container">
-        <div className="row">
-          { listOfPost }
-        </div>
-      </div>
+      <Router>
+        <Layout>
+          <Route exact path="/" component={ Home } />
+          <Route path="/posts" component={ Posts } />
+        </Layout>
+      </Router>
     );
   }
 }
