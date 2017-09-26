@@ -12,7 +12,7 @@ class Posts extends React.Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         axios.get( 'http://localhost:8080/reactwp/wp-json/wp/v2/posts?_embed' )
           .then ( response => {
             this.setState( {
@@ -21,7 +21,7 @@ class Posts extends React.Component {
           } )
           .catch( error => {
             console.log( error );
-          } )
+        } )
     }
 
     render(){
