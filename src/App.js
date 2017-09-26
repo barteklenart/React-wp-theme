@@ -8,6 +8,7 @@ import {
 import Layout from './layouts/Layout';
 import Home from './pages/Home';
 import Posts from './layouts/Posts';
+import SinglePost from './layouts/SinglePost';
 
 class App extends Component {
   render() {
@@ -15,7 +16,9 @@ class App extends Component {
       <Router>
         <Layout>
           <Route exact path="/" component={ Home } />
-          <Route path="/posts" component={ Posts } />
+          <Route path="/posts" component={ Posts }>
+          </Route>
+          <Route path="/post/:postId" component={SinglePost}/>
         </Layout>
       </Router>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Home extends React.Component {
-    render(){
+    render() {
         return (
             <div className="container">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. 

@@ -3,7 +3,7 @@ import React from 'react';
 import Navs from '../components/Navs';
 
 class Layout extends React.Component {
-    render(){
+    render() {
         return (
             <div>
                 <Navs />                

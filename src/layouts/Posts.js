@@ -5,7 +5,7 @@ import PostsList from '../components/PostsList';
 
 class Posts extends React.Component {
 
-    constructor(){
+    constructor() {
         super();
         this.state = {
             posts: []
@@ -21,6 +21,12 @@ class Posts extends React.Component {
           } )
           .catch( error => {
             console.log( error );
+        } )
+    }
+
+    componentWillUnmount() {
+        this.setState( {
+            post: []
         } )
     }
 

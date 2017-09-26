@@ -4,7 +4,7 @@ import axios from 'axios';
 
 class Navs extends React.Component {
 
-    constructor(){
+    constructor() {
         super();
         this.state = {
             menu: []
@@ -23,7 +23,7 @@ class Navs extends React.Component {
         } )
     }
 
-    render(){
+    render() {
         const menu = this.state.menu.map( ( menu, key ) => {
             const isActive = menu.url === window.location.pathname ? 'active' : '';
 
@@ -32,7 +32,7 @@ class Navs extends React.Component {
         
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="#">Navbar</a>
+                <Link to="/" className="navbar-brand" >Navbar</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
