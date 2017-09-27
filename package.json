@@ -6,7 +6,8 @@
     "axios": "^0.16.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.13"
+    "react-scripts": "1.0.13",
+    "react-transition-group": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -15,6 +16,9 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "react-router-dom": "^4.2.2"
+    "css-loader": "^0.28.7",
+    "react-router-dom": "^4.2.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2"
   }
 }

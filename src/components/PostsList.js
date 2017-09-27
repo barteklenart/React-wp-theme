@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 
 class PostList extends React.Component {
     render() {
-        const imgAddress =  this.props.post._embedded['wp:featuredmedia'] !== undefined ? this.props.post._embedded['wp:featuredmedia'][0].source_url : '';
         const { post } = this.props;
-
+        const imgAddress =  post._embedded['wp:featuredmedia'] !== undefined ? <img className="card-img-top" src={ post._embedded['wp:featuredmedia'][0].source_url }  alt={ post._embedded['wp:featuredmedia'][0].title.rendered } /> : '';
         return (
             <div className="col-md-6">         
                 <div className="card">
-                    <img className="card-img-top" src={ imgAddress } alt="Card image cap" />
+                    { imgAddress }
                     <div className="card-body">
                     <h4 className="card-title">{ post.title.rendered }</h4>
                     <p className="card-text" >{ post.content.rendered.replace( /<\/?[^>]+(>|$)/g, "" ).substr( 0,200 ) }</p>
