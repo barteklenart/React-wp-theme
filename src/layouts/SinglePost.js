@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 class SinglePost extends React.Component {
 
@@ -51,3 +52,7 @@ class SinglePost extends React.Component {
 }
 
 export default SinglePost;
+
+SinglePost.PropTypes = {
+    slug: PropTypes.string
+}

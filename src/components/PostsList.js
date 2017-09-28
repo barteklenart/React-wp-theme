@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class PostList extends React.Component {
     render() {
@@ -21,3 +22,7 @@ class PostList extends React.Component {
 }
 
 export default PostList;
+
+PostList.propTypes = {
+    post: PropTypes.object
+}
